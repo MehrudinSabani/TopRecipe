@@ -1,0 +1,7 @@
+<div class="favoriteMeals" *ngFor="let favorite of favoriteMeals">
+<p>{{favorite.mealName}}</p>
+<img src="{{favorite.mealImage}}">
+
+<p> Full details <a href="/meal/{{favorite.mealId}}">here</a></p>
+
+</div>

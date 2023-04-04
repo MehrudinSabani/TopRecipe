@@ -1,0 +1,59 @@
+
+<div class="main-body">
+    <div class="container" *ngFor="let meal of mealDetails">
+    
+      <div >
+    
+        <img src="{{meal.strMealThumb}}" class="img-thumbnail" alt="...">  
+        <h5>{{ meal.strMeal }}</h5>
+        <p> Category: {{meal.strCategory}}</p>
+        <p> Instructions: {{meal.strInstructions}}</p>
+      </div>
+
+      <table class="ingredients">
+        <tr>
+            <th>Ingredients</th>
+            <th>Measures</th>
+        </tr>
+        <tr *ngFor="let ingredient of nrOfIngredients; let i = index" class="ingredient">
+        <td>
+            {{ meal['strIngredient' + i.toString()] }}
+        </td>
+        <td>
+            {{ meal['strMeasure' + i.toString()] }}
+        </td>
+        </tr>
+      </table>
+    </div>
+
+    <button (click)="addToFavorites()">Add To favorites</button>
+
+    <form #f="ngForm" (ngSubmit)="onAddUserOpinion(f)">
+    <div class="reviewInput">
+        <p> Leave a review </p>
+        <label>How many stars </label>
+        <select name="rating" id="rating" ngModel>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+        </select>
+        
+        <p>What are your thoughts? </p>
+        <input type="text" id="comment" name="comment" ngModel>
+        <br><br>
+
+    </div>
+
+    <button type="submit">Submit rating</button>
+
+    </form>
+
+    <div class="userRating" *ngFor="let data of userData">
+        <h4>{{data.rating}}</h4>
+        <p>{{data.comment}}</p>
+      </div>
+
+    </div>
+    

@@ -1,0 +1,10 @@
+.card{
+    display: inline-block;
+    margin: 16px;
+}
+
+.card h5{
+    text-align: center;
+    height: 80px;
+
+}

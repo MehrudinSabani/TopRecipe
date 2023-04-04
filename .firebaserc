@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "toprecipe-3050e": {
+      "hosting": {
+        "recipe-book": [
+          "toprecipe-3050e"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "toprecipe-3050e"
+  }
+}

@@ -1,0 +1,33 @@
+
+<div class="main-body">
+    <div class="container">
+    
+      <div class="input-group mb-3">
+        <!-- As the user types results are update in real time -->
+        <input [(ngModel)]="keywordInput" type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1" (input)="onKeywordInput($event)" placeholder="type the name of the meal">
+
+        
+
+        <!-- solution with button, beta -->
+        <!-- <input [(ngModel)]="keywordInput" type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1" > -->
+    
+        <!-- todo: focus should stay as long as the user types -->
+        <!-- <button type="submit" (click)="onGetMealsByKeyword()">Search</button> -->
+
+    
+      </div>
+    
+      <div class="card" style="width: 18rem;" *ngFor="let recipe of recipes">
+        <a [routerLink]="['/meal', recipe.idMeal]" style="    text-decoration: none;
+        color: #b61c1c; /* For Example */">  
+    
+        <img src="{{recipe.strMealThumb}}" class="img-thumbnail" alt="...">  
+        <h5>{{ recipe.strMeal }}</h5>
+      
+      </a>
+    
+      </div>
+      
+    </div>
+    </div>
+    
