@@ -30,6 +30,7 @@ export class SignupComponent implements OnInit {
       if (this.signupForm.invalid)                            // if there's an error in the form, don't submit it
           return;
 
+        //   todo: Why not merge displayName with formData?
       const displayName = this.signupForm.get('displayName').value;
       const formData = { email: this.signupForm.get('email').value, password: this.signupForm.get('password').value };
 

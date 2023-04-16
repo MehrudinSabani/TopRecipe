@@ -24,8 +24,6 @@
         </td>
         </tr>
       </table>
-    </div>
-
     <button (click)="addToFavorites()">Add To favorites</button>
 
     <form #f="ngForm" (ngSubmit)="onAddUserOpinion(f)">
@@ -56,4 +54,25 @@
       </div>
 
     </div>
-    
+  </div>
+
+  <p>slider</p>
+
+  
+  <div class="slider">
+    <div class="slides">
+      <!-- repeat the slides using the *ngFor directive -->
+      <div class="slide" *ngFor="let image of images">
+        <img src="{{ image }}" alt="slide">
+      </div>
+      <!-- repeat the slides again to ensure that the slider always has enough slides to fill the viewable area -->
+      <div class="slide" *ngFor="let image of images">
+        <img src="{{ image }}" alt="slide">
+      </div>
+    </div>
+  </div>
+  
+  <body>
+    <div class="bg-blue-500 text-white p-4">Hello, Tailwind CSS!</div>
+  </body>
+

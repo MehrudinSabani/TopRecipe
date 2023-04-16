@@ -1,0 +1,23 @@
+.slider {
+    display: flex;
+    overflow: hidden;
+  }
+  
+  .slide {
+    flex: 0 0 auto;
+    width: 50%;
+    margin-right: 10px; /* add some margin between slides */
+  }
+  
+  /* animate the slider using the translateX property */
+  @keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+  
+  /* apply the animation to the slider element */
+  .slider .slides {
+    display: flex;
+    animation: slide 5s linear infinite;
+  }
+  

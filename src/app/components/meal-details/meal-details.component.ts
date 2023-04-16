@@ -20,6 +20,15 @@ import { AthenticationService } from 'src/app/authentication/athentication.servi
 })
 export class MealDetailsComponent implements OnInit {
 
+
+  images = [
+    'https://www.themealdb.com/images/media/meals/tkxquw1628771028.jpg',
+    'https://www.themealdb.com/images/media/meals/tkxquw1628771028.jpg',
+    'https://www.themealdb.com/images/media/meals/tkxquw1628771028.jpg'
+  ];
+  translateValue = 0;
+
+
   mealId: number = 53065;
   // deetails of the recipe
   mealDetails: Meal[];
@@ -42,6 +51,13 @@ export class MealDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.onGetMealsById()
     this.onGetUserOpinionById();
+
+    setInterval(() => {
+      this.translateValue += 33.33;
+      if (this.translateValue === 99.99) {
+        this.translateValue = 0;
+      }
+    }, 2000);
   }
 
   onGetMealsById() {
